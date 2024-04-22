@@ -4,7 +4,8 @@ import { FormForEmployee } from './FormForEmployee';
 import DisplayDataWithGrid from './DisplayDataWithGrid';
 export default function Parent() {
 
-    const [open,setOpen] = useState(false);
+  const [data,SetData]= useState([]);
+   const [open,setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -20,8 +21,8 @@ export default function Parent() {
         Open form dialog
       </Button>
 
-      <FormForEmployee open={open}   handleClose={handleClose}/>
-      <DisplayDataWithGrid/>
+      <FormForEmployee open={open}   handleClose={handleClose} data={data} SetData={SetData}/>
+      <DisplayDataWithGrid data={data}/>
     </>
   )
 }

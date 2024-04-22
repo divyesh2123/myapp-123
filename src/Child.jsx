@@ -1,8 +1,12 @@
 import React from 'react'
 
-export default function Child(props) {
+
+
+
+
+export default function Child(data) {
 
   return (
-    <div>{props.data.body}</div>
+    <div>{data.data.body}</div>
   )
 }

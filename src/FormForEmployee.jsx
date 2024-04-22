@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -8,7 +8,26 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 export const FormForEmployee = (props) => {
 
-    const {open,handleClose,} = props;
+  const [form,setform]= useState({
+    firstName: "",
+    lastName :""
+
+  });
+
+  const handleChange = (e)=>{
+
+    setform({...form,[e.target.name] : e.target.value});
+  }
+
+  const handleSave = ()=>{
+
+    let p =[...data];
+    p.push(form);
+    SetData(p);
+    handleClose();
+  }
+
+    const {open,handleClose,data,SetData} = props;
   return (
     <Dialog
     open={open}
@@ -35,17 +54,30 @@ export const FormForEmployee = (props) => {
         autoFocus
         required
         margin="dense"
-        id="name"
-        name="email"
-        label="Email Address"
-        type="email"
+        id="firstName"
+        name="firstName"
+        label="firstName"
+        type="text"
         fullWidth
         variant="standard"
+        onChange={handleChange}
+      />
+       <TextField
+        autoFocus
+        required
+        margin="dense"
+        id="lastName"
+        name="lastName"
+        label="last Name"
+        type="text"
+        fullWidth
+        variant="standard"
+        onChange={handleChange}
       />
     </DialogContent>
     <DialogActions>
       <Button onClick={handleClose}>Cancel</Button>
-      <Button type="submit">Subscribe</Button>
+      <Button type="button" onClick={handleSave}>Subscribe</Button>
     </DialogActions>
   </Dialog>
   )
