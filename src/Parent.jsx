@@ -6,10 +6,28 @@ export default function Parent() {
 
   const [data,SetData]= useState([]);
    const [open,setOpen] = useState(false);
+   const [index,setIndex]= useState(-1);
 
     const handleClickOpen = () => {
         setOpen(true);
       };
+
+      const deleteEmp = (index)=>{
+
+        let p = [...data];
+
+        p.splice(index,1);
+
+        SetData(p);
+
+      }
+
+      const editEmp = (index)=>{
+
+        setOpen(true);
+        setIndex(index);
+
+      }
     
       const handleClose = () => {
         setOpen(false);
@@ -21,8 +39,8 @@ export default function Parent() {
         Open form dialog
       </Button>
 
-      <FormForEmployee open={open}   handleClose={handleClose} data={data} SetData={SetData}/>
-      <DisplayDataWithGrid data={data}/>
+      <FormForEmployee open={open}   handleClose={handleClose} data={data} SetData={SetData} index={index}/>
+      <DisplayDataWithGrid data={data} deleteEmp={deleteEmp} editEmp={editEmp}/>
     </>
   )
 }
