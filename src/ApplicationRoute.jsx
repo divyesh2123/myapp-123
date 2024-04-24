@@ -4,7 +4,7 @@ import Accounts from './Accounts'
 import { Login } from './Login'
 import LoginPage from './LoginPage'
 import Parent from './Parent'
-
+import {CRUDAPI} from './CRUDAPI';
 export default function ApplicationRoute() {
   return (
     <>
@@ -14,6 +14,7 @@ export default function ApplicationRoute() {
         <Route path='/account' element={<Accounts></Accounts>}/>
         <Route path='/' element={<LoginPage></LoginPage>}/>
         <Route path='/crud' element={<Parent></Parent>}/>
+        <Route path='/crudwithapi' element={<CRUDAPI></CRUDAPI>}/>
     </Routes>
     </>
   )
