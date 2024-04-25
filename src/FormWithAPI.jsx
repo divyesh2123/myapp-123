@@ -6,10 +6,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useNavigate } from 'react-router-dom';
 
 export default function FormWithAPI(props) {
 
     const {open,handleClose,d} = props;
+
+  
 
     
 
@@ -34,6 +37,19 @@ export default function FormWithAPI(props) {
     },[d])
 
     const handleSave = ()=>{
+
+      fetch("https://660268879d7276a755532a05.mockapi.io/users/"+ form.id,{
+        method:"PUT",
+        body: JSON.stringify(form),
+        headers: {
+          'Content-Type':"Application/json"
+        }
+      }).then(y=>y.json())
+    .then(y=>{
+
+      handleClose();
+    //  setData(y);
+    })
 
     }
 

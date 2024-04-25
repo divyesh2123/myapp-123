@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 export default function DisplayWithAPI(props) {
 
-  const {handleOpen}=props;
+  const {handleOpen,open}=props;
 
     const [data,setData] = useState([]);
 
@@ -86,7 +86,7 @@ export default function DisplayWithAPI(props) {
    
 
 
-    },[id])
+    },[id,open])
   return (
     <div style={{ height: 300, width: '100%' }}>
     <DataGrid rows={data} columns={columns} />

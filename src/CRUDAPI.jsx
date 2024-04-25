@@ -6,6 +6,7 @@ export const CRUDAPI = () => {
 
   const [d,setd]= useState({});
   const [open,setopen]= useState(false);
+  
 
   const handleClose = ()=>{
 
@@ -23,7 +24,7 @@ export const CRUDAPI = () => {
   return (
     <div>
         
-        <DisplayWithAPI handleOpen={handleOpen}/>
+        <DisplayWithAPI handleOpen={handleOpen} open={open}/>
         <FormWithAPI handleClose={handleClose} open={open} d={d}/>
 
 
