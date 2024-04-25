@@ -39,7 +39,7 @@ export default function Parent() {
         Open form dialog
       </Button>
 
-      <FormForEmployee open={open}   handleClose={handleClose} data={data} SetData={SetData} index={index}/>
+      <FormForEmployee open={open}   handleClose={handleClose} data={data} SetData={SetData} index={index} setIndex={setIndex}/>
       <DisplayDataWithGrid data={data} deleteEmp={deleteEmp} editEmp={editEmp}/>
     </>
   )

@@ -8,7 +8,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 export const FormForEmployee = (props) => {
 
-  const {open,handleClose,data,SetData,index} = props;
+  const {open,handleClose,data,SetData,index,setIndex} = props;
   const [form,setform]= useState({
     firstName: "",
     lastName :"",
@@ -22,8 +22,16 @@ export const FormForEmployee = (props) => {
     {
       setform(data[index])
     }
+    else
+    {
+      setform({
+        firstName:"",
+        lastName : "",
+        id:0
+      })
+    }
 
-  },[])
+  },[index,open])
 
   const handleChange = (e)=>{
 
@@ -45,6 +53,8 @@ export const FormForEmployee = (props) => {
     {
       p[index]= form;
     }
+    
+    setIndex(-1);
     SetData(p);
     handleClose();
   }
