@@ -17,19 +17,19 @@ export default function FormWithAPI(props) {
     
 
     
-    const [form,setform]= useState({
+    const [data,setdata]= useState({
         firstname : "",
         lastname : "",
 
     })
 
-    console.log(form);
+    console.log(data);
     useEffect(()=>{
 
         if(d)
         {
            
-            setform({...d,firstname:d.firstname,lastname: d.lastname});
+            setdata({...d,firstname:d.firstname,lastname: d.lastname});
         }
 
         console.log(d);
@@ -38,15 +38,18 @@ export default function FormWithAPI(props) {
 
     const handleSave = ()=>{
 
-      fetch("https://660268879d7276a755532a05.mockapi.io/users/"+ form.id,{
-        method:"PUT",
-        body: JSON.stringify(form),
+      let method1 = d? "PUT" : "POST"
+      let url =  d? `https://660268879d7276a755532a05.mockapi.io/users/${data.id}` : "https://660268879d7276a755532a05.mockapi.io/users"
+      fetch(url,{
+        method:d? "PUT" : "POST",
+        body: JSON.stringify(data),
         headers: {
           'Content-Type':"Application/json"
         }
       }).then(y=>y.json())
     .then(y=>{
 
+      setdata({firstname: "",lastname:""});
       handleClose();
     //  setData(y);
     })
@@ -55,7 +58,8 @@ export default function FormWithAPI(props) {
 
     const handleChange = (e)=>{
 
-        setform({...form,[e.target.name]: e.target.value});
+
+        setdata({...data,[e.target.name]: e.target.value});
 
     }
 
@@ -90,7 +94,7 @@ export default function FormWithAPI(props) {
         label="firstname"
         type="text"
         fullWidth
-        value={form?.firstname}
+        value={data?.firstname}
         variant="standard"
         onChange={handleChange}
       />
@@ -102,7 +106,7 @@ export default function FormWithAPI(props) {
         name="lastname"
         label="last name"
         type="text"
-        value={form?.lastname}
+        value={data?.lastname}
         fullWidth
         variant="standard"
         onChange={handleChange}
