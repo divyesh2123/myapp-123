@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '@mui/material/Button';
 import { FormForEmployee } from './FormForEmployee';
 import DisplayDataWithGrid from './DisplayDataWithGrid';
@@ -6,7 +6,17 @@ export default function Parent() {
 
   const [data,SetData]= useState([]);
    const [open,setOpen] = useState(false);
+
+   if(index < 0)
+   {
+   useEffect(()=>{
+
+   })
+
    const [index,setIndex]= useState(-1);
+  
+  
+  }
 
     const handleClickOpen = () => {
         setOpen(true);

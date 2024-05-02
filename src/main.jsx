@@ -23,12 +23,16 @@ import Product from './Product.jsx'
 import Parent from './Parent.jsx'
 import ApplicationRoutes from '../ApplicationRoutes.jsx'
 import HeaderFile from './HeaderFile.jsx'
+import ShowMoreTextToggle from '../ShowMoreTextToggle.jsx'
+import MemoExample from '../MemoExample.jsx'
+import SimpleExampleFromClass from '../SimpleExampleFromClass.jsx'
+import Test from './Test.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
 
-
-    <ApplicationRoute/>
+<App/>
+      
     
     </BrowserRouter>
   

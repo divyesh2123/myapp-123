@@ -28,7 +28,7 @@ export default function DisplayWithAPI(props) {
 
     }
 
-    const columns = [
+    const columns =  [
         { field: 'firstname', headerName: 'First Name', width: 150 },
         { field: 'lastname', headerName: 'Last Name', width: 150 },
         {field:'name', headerName:"Name", width:200},
