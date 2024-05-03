@@ -27,11 +27,18 @@ import ShowMoreTextToggle from '../ShowMoreTextToggle.jsx'
 import MemoExample from '../MemoExample.jsx'
 import SimpleExampleFromClass from '../SimpleExampleFromClass.jsx'
 import Test from './Test.jsx'
+import CounterRedux from './CounterRedux.jsx'
+import { Provider } from 'react-redux'
+import store from './store/store.js'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
 
-<App/>
+    <Provider store={store}>
+
+<CounterRedux/>
+
+</Provider>
       
     
     </BrowserRouter>
