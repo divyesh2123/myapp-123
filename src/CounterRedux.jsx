@@ -4,7 +4,7 @@ import { DEC, Incre } from './action/counteraction';
 
 export default function CounterRedux() {
 
-   const d = useSelector(y=>y);
+   const d = useSelector(y=>y.counter);
    const p = useDispatch();
 
    const incer = ()=>{

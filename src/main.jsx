@@ -30,13 +30,17 @@ import Test from './Test.jsx'
 import CounterRedux from './CounterRedux.jsx'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
+import UserRedux from './UserRedux.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
 
-    <Provider store={store}>
+    <Provider store={store
+      
+    }>
 
 <CounterRedux/>
+<UserRedux/>
 
 </Provider>
       
