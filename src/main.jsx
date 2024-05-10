@@ -33,15 +33,17 @@ import store from './store/store.js'
 import UserRedux from './UserRedux.jsx'
 import UserWithAsync from './UserWithAsync.jsx'
 import UserRequestSaga from './UserRequestSaga.jsx'
+import d from './nstore/nstore.js';
+import CounterNewExample from './CounterNewExample.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
 
-    <Provider store={store
+    <Provider store={d
       
     }>
 
-<UserRequestSaga/>
+<CounterNewExample/>
 
 
 </Provider>
