@@ -32,6 +32,7 @@ import { Provider } from 'react-redux'
 import store from './store/store.js'
 import UserRedux from './UserRedux.jsx'
 import UserWithAsync from './UserWithAsync.jsx'
+import UserRequestSaga from './UserRequestSaga.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -40,8 +41,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       
     }>
 
-<CounterRedux/>
-<UserWithAsync/>
+<UserRequestSaga/>
+
 
 </Provider>
       

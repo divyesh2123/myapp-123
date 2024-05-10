@@ -1,8 +1,10 @@
-const { all } = require("redux-saga/effects");
-const { watchINC } = require("./counterSaga");
+import { all } from "redux-saga/effects";
+import { watchUser } from "./userSaga";
+import { watchINC } from "./counterSaga";
+
 
 export function* rootSaga()
 {
 
-    yield all([watchINC()])
+    yield all([watchINC(),watchUser()])
 }
