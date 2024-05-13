@@ -35,6 +35,7 @@ import UserWithAsync from './UserWithAsync.jsx'
 import UserRequestSaga from './UserRequestSaga.jsx'
 import d from './nstore/nstore.js';
 import CounterNewExample from './CounterNewExample.jsx'
+import MyData from './MyData.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -43,7 +44,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       
     }>
 
-<CounterNewExample/>
+<MyData/>
 
 
 </Provider>
