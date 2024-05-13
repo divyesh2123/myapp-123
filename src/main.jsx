@@ -36,6 +36,7 @@ import UserRequestSaga from './UserRequestSaga.jsx'
 import d from './nstore/nstore.js';
 import CounterNewExample from './CounterNewExample.jsx'
 import MyData from './MyData.jsx'
+import MySagaWithT from './MySagaWithT.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -44,7 +45,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       
     }>
 
-<MyData/>
+<MySagaWithT/>
 
 
 </Provider>
