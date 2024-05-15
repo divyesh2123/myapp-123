@@ -37,8 +37,9 @@ import d from './nstore/nstore.js';
 import CounterNewExample from './CounterNewExample.jsx'
 import MyData from './MyData.jsx'
 import MySagaWithT from './MySagaWithT.jsx'
-import ErrorBoundry from './ErrorBoundry.jsx'
+import { ErrorBoundary } from "react-error-boundary";
 import BuggyCounter from './BuggyCounter.jsx'
+import MyRefInfo from './MyRefInfo.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -52,11 +53,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   This is the information
 </MySagaWithT> */}
 
-<ErrorBoundry>
+<ErrorBoundary fallback={<div>Something went wrong</div>}>
 
   <BuggyCounter/>
+  <MyRefInfo/>
 
-</ErrorBoundry>
+</ErrorBoundary>
 
 
 </Provider>
