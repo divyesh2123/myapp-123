@@ -3,6 +3,7 @@ import axios from 'axios';
 import authFetch from './baseaxios/authFetch';
 
 export default function Accounts() {
+  let obj = null;
 
   useEffect(()=>{
 
@@ -15,6 +16,8 @@ export default function Accounts() {
 
   },[])
   return (
-    <div>Accounts</div>
+    <div>Accounts
+     
+    </div>
   )
 }

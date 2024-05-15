@@ -37,6 +37,8 @@ import d from './nstore/nstore.js';
 import CounterNewExample from './CounterNewExample.jsx'
 import MyData from './MyData.jsx'
 import MySagaWithT from './MySagaWithT.jsx'
+import ErrorBoundry from './ErrorBoundry.jsx'
+import BuggyCounter from './BuggyCounter.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -44,8 +46,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={d
       
     }>
+{/* 
+<MySagaWithT> 
 
-<MySagaWithT/>
+  This is the information
+</MySagaWithT> */}
+
+<ErrorBoundry>
+
+  <BuggyCounter/>
+
+</ErrorBoundry>
 
 
 </Provider>
