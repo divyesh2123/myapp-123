@@ -17,7 +17,7 @@ import { FormikWithMUI } from './FormikWithMUI.jsx'
 import ExampleWithSelect from './ExampleWithSelect.jsx'
 import { EmployeeDisplay } from './EmployeeDisplay.jsx'
 import DisplayDataWithAPIProps from './DisplayDataWithAPIProps.jsx'
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Link, NavLink} from 'react-router-dom'
 import ApplicationRoute from './ApplicationRoute.jsx'
 import Product from './Product.jsx'
 import Parent from './Parent.jsx'
@@ -40,6 +40,8 @@ import MySagaWithT from './MySagaWithT.jsx'
 import { ErrorBoundary } from "react-error-boundary";
 import BuggyCounter from './BuggyCounter.jsx'
 import MyRefInfo from './MyRefInfo.jsx'
+import RouteWithHook from './RouteWithHook.jsx'
+import CustComLink from './CustComLink.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -47,18 +49,32 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={d
       
     }>
+
+      <ul>
+
+        <li>
+
+          <CustComLink to="/">Home</CustComLink>
+
+        </li>
+
+        <li>
+        <CustComLink
+            to="/prdouct"
+            
+          >Prdouct</CustComLink>
+          
+          </li>
+
+      </ul>
+
+      <RouteWithHook/>
 {/* 
 <MySagaWithT> 
 
   This is the information
 </MySagaWithT> */}
 
-<ErrorBoundary fallback={<div>Something went wrong</div>}>
-
-  <BuggyCounter/>
-  <MyRefInfo/>
-
-</ErrorBoundary>
 
 
 </Provider>
