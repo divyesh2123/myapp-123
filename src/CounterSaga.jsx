@@ -1,21 +1,36 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { connect  } from 'react-redux'
 
-export default function CounterSaga() {
-   const counter = useSelector(y=>y.counter);
-   const dis= useDispatch();
 
-   const saveInfo = ()=>{
+const mapStateToProps = (state) => ({
+  count: state.counter1.count
+})
 
-    dis({type: "INC_ASYC"})
 
-   }
+
+const mapDispatchToProps = (dispatch)=>{
+
+  return { 
+    saveInfo: ()=>dispatch({type: "INC_ASYC"}),
+    decInfo: ()=>dispatch({type: "INC_ASYC"}),
+  
+
+}
+}
+
+ function CounterSaga({count,saveInfo,decInfo}) {
+   
+  
+
+   
 
 
   return (
-    <div>{counter}
+    <div>{count}
     
     <button onClick={saveInfo}>+</button>
     </div>
   )
 }
+
+export default connect(mapStateToProps,mapDispatchToProps)(CounterSaga)

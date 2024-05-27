@@ -1,8 +1,9 @@
 import { all } from "redux-saga/effects";
 import { watchUser } from "./userSaga";
+import { watchINC } from "./counterSaga";
 
-function* rootSaga()
+function* rootSaga1()
 {
-    yield all([watchUser()]);
+    yield all([watchUser(),watchINC()]);
 }
-export default rootSaga;
+export default rootSaga1;

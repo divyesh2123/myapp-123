@@ -42,6 +42,7 @@ import BuggyCounter from './BuggyCounter.jsx'
 import MyRefInfo from './MyRefInfo.jsx'
 import RouteWithHook from './RouteWithHook.jsx'
 import CustComLink from './CustComLink.jsx'
+import CounterSaga from './CounterSaga.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -68,7 +69,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       </ul>
 
-      <RouteWithHook/>
+      <CounterSaga/>
 {/* 
 <MySagaWithT> 
 
